@@ -1,31 +1,27 @@
-import {selectorDePersonaje} from "./selectorDePersonaje"
-import { Personaje_1, Personaje_2, Personaje_3, Personaje_4} from "../modelo/Personajes"
+import { selectorDePersonaje } from "./selectorDePersonajes.js";
+import { Personaje_1, Personaje_2, Personaje_3, Personaje_4} from "../modelo/Personajes.js";
+import {Menubase} from "../modelo/Menus.js";
+
+let bucleDelMenu = true;
+let bucleSelectorDePersonaje = true;
 
 function iniciarJuego(){
     while (bucleDelMenu) {
-        console.log("Elija una opción, Comenzar partida, Opciones, Salir")
+        
+        let menu = Menubase.imprimirmenu()
 
-        let menu = prompt("");//tambien podria poner una funcion o una variable con el saludo
 
-        if (menu == "Comenzar partida"){
-            bucleDelMenu = false/* prodria hacer que el usuario pueda volver para atras osea que while vuelva a ser true */
-            while (bucleSelectorDePersonaje) {
-
-                console.log("Seleccione un Personaje ",Personaje_1.nom,Personaje_2.nom,Personaje_3.nom,Personaje_4.nom)
-
-                let personajeSelecionado = prompt("")
-                selectorDePersonaje(personajeSelecionado)
-                
-            }
+        if (menu == "Comenzar partida" || menu === 0){
+           
+                selectorDePersonaje()
             
-        } else if (menu = "Opciones") {
+        } else if (menu === "Opciones" || menu === 1) {
             console.log("Sección en desarrollo")
-        }
-        else{
-            console.log("No a selecionado ninguna opcion")
+        } else if (menu == "Salir" || menu === 2) {
+            bucleDelMenu = false
         };
         
     };
 
 };
-export {iniciarJuego}
+export {iniciarJuego};

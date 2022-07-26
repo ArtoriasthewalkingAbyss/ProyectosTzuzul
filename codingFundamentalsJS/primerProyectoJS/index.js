@@ -1,8 +1,11 @@
-import { Personaje_1, Personaje_2, Personaje_3, Personaje_4, Oponente1 } from "./modelo/Menus";
-import {iniciarJuego} from ".funciones/iniciarJuego"
+import { Personaje_1, Personaje_2, Personaje_3, Personaje_4, Oponente1 } from "./modelo/Personajes.js";
+import {iniciarJuego} from "./funciones/iniciarJuego.js"
+
+let bucleDelMenu = true;
+let jugador;
+let prioridadDeturno;
 
 // print("hola")
-
 prompt("Presione Enter");
 
 iniciarJuego();
