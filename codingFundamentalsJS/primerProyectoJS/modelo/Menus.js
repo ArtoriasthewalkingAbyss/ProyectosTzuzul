@@ -1,40 +1,46 @@
 class Menu {
-    constructor(opcion1, opcion2, opcion3, opcion4) {
-      this.opciones = [opcion1, opcion2, opcion3, opcion4];
+  constructor(opcion0, opcion1, opcion2) {
+    this.opciones = [opcion0, opcion1, opcion2];
     };
-    imprimirmenu() {
-      for (let i = 0; i < this.opciones.length; i++) {
-        console.log(this.opciones[i]);
-      };
-    };
+  imprimirmenu() {
+        console.table(this.opciones);
+        return this.seleccion();
   };
-  
-  class MenuBase extends Menu {
-    pedirNombre() {
-      
-      nombre = prompt("Escriba su nombre");
-      return this.validarNombre;
-    } 
-  
-    validarNombre(nombre) {
-      let respuesta;
-      while (respuesta == "no" && respuesta != "si") {
-        console.log(
-          "El nombre que puso es ",
-          nombre,
-          "¿Es correcto? Escriba [si/no]"
-        );
-  
-        respuesta = prompt("");
-  
-        if (respuesta == "si") {
-          console.log("Apuesto que su nombre es corecto");
-        } else if (respuesta == "no") {
-          console.log("A puesto que su nombre es incorecto");
-          //falta pedir
-          return this.pedirNombre;
+  seleccion(){
+      let eleccion = prompt("Eliga una opcion");
+
+      if (eleccion == this.opciones[0] || eleccion == this.opciones[1] || eleccion == this.opciones[2]) {
+        return this.validarElecciones(eleccion)
         } else {
-        }
-      }
+          console.log("Su selección no es válida");
+          return this.imprimirmenu();
+        };    
+    };
+  validarElecciones(eleccion) {
+    let eleccionVar = eleccion;
+    console.log("Su eleccion fue ", eleccion, "¿Es correcto? Escriba [si/no]");
+    let respuesta = prompt("");
+
+    if (respuesta == "si") {
+     console.log("Eleccion guardada");
+     return eleccionVar;
+    } else if (respuesta == "no") {
+      console.log("Eleccion rechasada");
+      return this.imprimirmenu();
+    } else {
+      console.log("Respuesta incoreccta")
+      return this.validarElecciones(eleccionVar)
     }
   }
+};
+
+/*class MenuDeSelecciondePersonaje extends Menu {
+  constructor()
+
+}*/
+
+const Menubase = new Menu("Comenzar partida","Opciones","Salir");
+
+const MenuPartida = Menu("")
+
+export {Menubase}
