@@ -21,57 +21,58 @@ function turnos(aguilidadJug,aguilidadOpo) {
 }
 
 function Combate(videDelJugador,vidaDelOponente,ataqueJug,ataqueOpe,aguilidadJug,aguilidadOpo,firstAtaque) {
-    while (videDelJugador > 0 && vidaDelOponente > 0) {
-        switch (firstAtaque) {
-            case 1:
-                console.log("Atacaste a tu Oponente");
-                console.log("Le sacaste",ataqueJug);
-                vidaDelOponente= vidaDelOponente - ataqueJug; 
-                console.log("Le queda",vidaDelOponente,"de vida" );
+ while (videDelJugador > 0 && vidaDelOponente > 0) {
+     switch (firstAtaque) {
+         case 1:
+             console.log("Atacaste a tu Oponente");
+             console.log("Le sacaste",ataqueJug);
+             vidaDelOponente= vidaDelOponente - ataqueJug; 
+             console.log("Le queda",vidaDelOponente,"de vida" );
 
-                if (vidaDelOponente <= 0) {
-                    console.log("Felicitaciones has ganado el combate")
-                    continue
-                } 
-                console.log("Ataco tu Oponente");
-                console.log("Te saco",ataqueOpe);
-                videDelJugador= videDelJugador - ataqueOpe;
-                console.log("Te queda",videDelJugador,"de vida");
+             if (vidaDelOponente <= 0) {
+                 console.log("Felicitaciones has ganado el combate")
+                 continue
+             } 
+             console.log("Ataco tu Oponente");
+             console.log("Te saco",ataqueOpe);
+             videDelJugador= videDelJugador - ataqueOpe;
+             console.log("Te queda",videDelJugador,"de vida");
             
-                if (videDelJugador <= 0) {
+             if (videDelJugador <= 0) {
                 console.log("Has perdido Game Over");
                 continue;
-                };
-                break;
-            case 2:
-                console.log("Ataco tu Oponente");
-                console.log("Te saco",ataqueOpe);
-                videDelJugador= videDelJugador - ataqueOpe;
-                console.log("Te queda",videDelJugador,"de vida");
+             };
+             break;
+         case 2:
+            console.log("Ataco tu Oponente");
+            console.log("Te saco",ataqueOpe);
+            videDelJugador= videDelJugador - ataqueOpe;
+            console.log("Te queda",videDelJugador,"de vida");
             
-                if (videDelJugador <= 0) {
-                    console.log("Has perdido Game Over");
-                    continue;
-                };
+            if (videDelJugador <= 0) {
+               console.log("Has perdido Game Over");
+               continue;
+            };
             console.log("Atacaste a tu Oponente");
             console.log("Le sacaste",ataqueJug);
             vidaDelOponente= vidaDelOponente - ataqueJug; 
             console.log("Le queda",vidaDelOponente,"de vida" );
-            
-            if (vidaDelOponente <= 0) {
-                console.log("Felitaciones has ganado el combate")
-                continue
-            };
+
+             if (vidaDelOponente <= 0) {
+                 console.log("Felitaciones has ganado el combate")
+                 continue
+             };
             break;
-            
-            default:
-                break;
-        }
+     
+         default:
+             break;
+     }
 
     /* if (aguilidadJug > aguilidadOpo) {
-        console.log("")
+         console.log("")
+         
      } */
-    };   
+ };   
 };
 
 for (let i = 1; i < 2; i++) {
@@ -111,7 +112,7 @@ for (let i = 1; i < 2; i++) {
             break;
     };
 };
-
+   
 console.log("Hasta aqui la demo, Que tengan un lindo día");    
 /* if(firstAtaque == 1) {
 
@@ -127,14 +128,14 @@ console.log("Hasta aqui la demo, Que tengan un lindo día");
     a++
     if (a == 100) {
         vidaDelOponente = -1
-    
+             
     }
-} else {
-    console.log("Ataco tu Oponente");
-    console.log("Te saco",ataqueOpe);
-    videDelJugador= videDelJugador - ataqueOpe;
-    console.log("Te queda",videDelJugador,"de vida");
-    console.log("Atacaste a tu Oponente");
-    console.log("Le sacaste",ataqueJug);
-    vidaDelOponente= vidaDelOponente - ataqueJug; 
-    console.log("Le queda",vidaDelOponente,"de vida" ) */
+ } else {
+     console.log("Ataco tu Oponente");
+     console.log("Te saco",ataqueOpe);
+     videDelJugador= videDelJugador - ataqueOpe;
+     console.log("Te queda",videDelJugador,"de vida");
+     console.log("Atacaste a tu Oponente");
+     console.log("Le sacaste",ataqueJug);
+     vidaDelOponente= vidaDelOponente - ataqueJug; 
+     console.log("Le queda",vidaDelOponente,"de vida" ) */

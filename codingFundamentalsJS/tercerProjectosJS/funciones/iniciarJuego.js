@@ -12,6 +12,7 @@ function iniciarJuego(){
 
 
         if (menu == "Comenzar partida" || menu === 0){
+           
                 selectorDePersonaje()
             
         } else if (menu === "Opciones" || menu === 1) {

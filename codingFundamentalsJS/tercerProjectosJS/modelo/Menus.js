@@ -10,7 +10,7 @@ class Menu {
       let eleccion = prompt("Eliga una opcion");
 
       if (eleccion == this.opciones[0] || eleccion == this.opciones[1] || eleccion == this.opciones[2]) {
-        return this.validarElecciones(eleccion);
+        return this.validarElecciones(eleccion)
         } else {
           console.log("Su selección no es válida");
           return this.imprimirmenu();
@@ -22,14 +22,14 @@ class Menu {
     let respuesta = prompt("");
 
     if (respuesta == "si") {
-      console.log("Eleccion guardada");
-      return eleccionVar;
+     console.log("Eleccion guardada");
+     return eleccionVar;
     } else if (respuesta == "no") {
       console.log("Eleccion rechasada");
       return this.imprimirmenu();
     } else {
-      console.log("Respuesta incoreccta");
-      return this.validarElecciones(eleccionVar);
+      console.log("Respuesta incoreccta")
+      return this.validarElecciones(eleccionVar)
     }
   }
 };
@@ -41,6 +41,6 @@ class Menu {
 
 const Menubase = new Menu("Comenzar partida","Opciones","Salir");
 
-//const MenuPartida = Menu("")
+const MenuPartida = Menu("")
 
 export {Menubase}
