@@ -1,10 +1,10 @@
 import { Personaje_1, Personaje_2, Personaje_3, Personaje_4} from "../modelo/Personajes.js"
 
-let bucleSelectorDePersonaje = true;
-let jugador;
 
 function selectorDePersonaje() {
-    while (bucleSelectorDePersonaje) {
+    let jugador;
+    let confir;
+    while (jugador === undefined) {
 
         console.log("Seleccione un Personaje escribiendo su nombre ")
         Personaje_1.mostraPersonaje(),Personaje_2.mostraPersonaje(), Personaje_3.mostraPersonaje(),Personaje_4.mostraPersonaje();
@@ -15,7 +15,6 @@ function selectorDePersonaje() {
             case Personaje_1.nom://podria hacer de ver como puedo juntar todos los caso pero mostrando el repectivo objeto que coresponda capaz cuntando todos los objetos en un arrays pero para mi que daria un problema muy gordo
                 console.log("Usted a seleccionado a");
                 console.table(Personaje_1)
-                let confir = prompt("¿está seguro de su elección? [si/no]");
                 validacionDePersonaje(confir);
                 jugador = Personaje_1;
                 break;
@@ -45,16 +44,19 @@ function selectorDePersonaje() {
 }
 
 function validacionDePersonaje(respuesta) {
-    if (respuesta == "si") {
-       
-       return console.log("Personaje seleccionado"), bucleSelectorDePersonaje = false;
+    while (!respuesta == "si" || !respuesta == "no") {
 
-    }
-    else if (respuesta == "no") {     
-        return console.log("Personaje no seleccionado")
-
-    } else {
-        return console.log("No a papretado la tecla corecta") //no se como hacer para que se repetir que se vuelva a hce la pregunta de si y no con una promesa
+        respuesta = prompt("¿está seguro de su elección? [si/no]");
+        
+        if (respuesta == "si") {
+            return console.log("Personaje seleccionado");
+        }
+        else if (respuesta == "no") {     
+            console.log("Personaje no seleccionado");
+    
+        } else {
+            console.log("No a papretado la tecla corecta") //no se como hacer para que se repetir que se vuelva a hce la pregunta de si y no con una promesa termine poniendole un while
+        }
     }
 };
 

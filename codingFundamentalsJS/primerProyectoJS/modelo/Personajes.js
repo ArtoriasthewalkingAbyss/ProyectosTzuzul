@@ -9,8 +9,8 @@ class Personaje {
         console.log(this.nom);
     };
     cambiarNombre() {
-        //podria poner una promesa
-    }
+        //podria poner una promesa esta demas esta funcion tendria que ser una obcion el la cracion y seleccion del personaje
+    };
 };
 
 

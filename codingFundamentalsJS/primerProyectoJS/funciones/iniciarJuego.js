@@ -2,14 +2,13 @@ import { selectorDePersonaje } from "./selectorDePersonajes.js";
 import { Personaje_1, Personaje_2, Personaje_3, Personaje_4} from "../modelo/Personajes.js";
 import {Menubase} from "../modelo/Menus.js";
 
-let bucleDelMenu = true;
 let bucleSelectorDePersonaje = true;
 
 function iniciarJuego(){
-    while (bucleDelMenu) {
+    const bucleDelMenu = undefined;
+    while (bucleDelMenu === undefined ) {
         
         let menu = Menubase.imprimirmenu()
-
 
         if (menu == "Comenzar partida" || menu === 0){
                 selectorDePersonaje()
