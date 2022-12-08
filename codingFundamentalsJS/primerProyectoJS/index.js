@@ -1,81 +1,15 @@
-import { Personaje_1, Personaje_2, Personaje_3, Personaje_4, Oponente1 } from "./modelo/Personajes.js";
-import {iniciarJuego} from "./funciones/iniciarJuego.js"
+//import { Personaje_1, Personaje_2, Personaje_3, Personaje_4, Oponente1 } from "./modelo/Personajes.js";
+import {iniciarJuego} from "./funciones/iniciarJuego.js";
 
-let bucleDelMenu = true;
 let jugador;
-let prioridadDeturno;
 
 // print("hola")
 prompt("Presione Enter");
 
 iniciarJuego();
 
-function turnos(aguilidadJug,aguilidadOpo) {
-    if (aguilidadJug > aguilidadOpo) {
-        prioridadDeturno = 1
-        return prioridadDeturno
-    } else {
-        prioridadDeturno = 2
-        return prioridadDeturno
-    }
-}
 
-function Combate(videDelJugador,vidaDelOponente,ataqueJug,ataqueOpe,aguilidadJug,aguilidadOpo,firstAtaque) {
- while (videDelJugador > 0 && vidaDelOponente > 0) {
-     switch (firstAtaque) {
-         case 1:
-             console.log("Atacaste a tu Oponente");
-             console.log("Le sacaste",ataqueJug);
-             vidaDelOponente= vidaDelOponente - ataqueJug; 
-             console.log("Le queda",vidaDelOponente,"de vida" );
-
-             if (vidaDelOponente <= 0) {
-                 console.log("Felicitaciones has ganado el combate")
-                 continue
-             } 
-             console.log("Ataco tu Oponente");
-             console.log("Te saco",ataqueOpe);
-             videDelJugador= videDelJugador - ataqueOpe;
-             console.log("Te queda",videDelJugador,"de vida");
-            
-             if (videDelJugador <= 0) {
-                console.log("Has perdido Game Over");
-                continue;
-             };
-             break;
-         case 2:
-            console.log("Ataco tu Oponente");
-            console.log("Te saco",ataqueOpe);
-            videDelJugador= videDelJugador - ataqueOpe;
-            console.log("Te queda",videDelJugador,"de vida");
-            
-            if (videDelJugador <= 0) {
-               console.log("Has perdido Game Over");
-               continue;
-            };
-            console.log("Atacaste a tu Oponente");
-            console.log("Le sacaste",ataqueJug);
-            vidaDelOponente= vidaDelOponente - ataqueJug; 
-            console.log("Le queda",vidaDelOponente,"de vida" );
-
-             if (vidaDelOponente <= 0) {
-                 console.log("Felitaciones has ganado el combate")
-                 continue
-             };
-            break;
-     
-         default:
-             break;
-     }
-
-    /* if (aguilidadJug > aguilidadOpo) {
-         console.log("")
-         
-     } */
- };   
-};
-
-for (let i = 1; i < 2; i++) {
+/*for (let i = 1; i < 2; i++) {
     
     console.log("Desea ir al Norte, Oeste, Sur, Este");
     let direccion = prompt("");
@@ -89,7 +23,7 @@ for (let i = 1; i < 2; i++) {
                 case "Combatir":
                     console.log("Retas a muerte al desconocido él acepta")
                     turnos(jugador.aguil,Oponente1.aguil)
-                    Combate(jugador.heal,Oponente1.heal,jugador.daño,Oponente1.daño,jugador.aguil,Oponente1.aguil,prioridadDeturno)
+                    combate(jugador.heal,Oponente1.heal,jugador.daño,Oponente1.daño,jugador.aguil,Oponente1.aguil,prioridadDeturno)
                     break;
                 case "Hablar":
 
@@ -104,15 +38,15 @@ for (let i = 1; i < 2; i++) {
             } */
             
             
-            break;
+            /*break;
     
         default:
             console.log("Opcion no valida");
             i--
             break;
     };
-};
-   
+};*/
+
 console.log("Hasta aqui la demo, Que tengan un lindo día");    
 /* if(firstAtaque == 1) {
 
@@ -128,14 +62,14 @@ console.log("Hasta aqui la demo, Que tengan un lindo día");
     a++
     if (a == 100) {
         vidaDelOponente = -1
-             
+    
     }
- } else {
-     console.log("Ataco tu Oponente");
-     console.log("Te saco",ataqueOpe);
-     videDelJugador= videDelJugador - ataqueOpe;
-     console.log("Te queda",videDelJugador,"de vida");
-     console.log("Atacaste a tu Oponente");
-     console.log("Le sacaste",ataqueJug);
-     vidaDelOponente= vidaDelOponente - ataqueJug; 
-     console.log("Le queda",vidaDelOponente,"de vida" ) */
+} else {
+    console.log("Ataco tu Oponente");
+    console.log("Te saco",ataqueOpe);
+    videDelJugador= videDelJugador - ataqueOpe;
+    console.log("Te queda",videDelJugador,"de vida");
+    console.log("Atacaste a tu Oponente");
+    console.log("Le sacaste",ataqueJug);
+    vidaDelOponente= vidaDelOponente - ataqueJug; 
+    console.log("Le queda",vidaDelOponente,"de vida" ) */

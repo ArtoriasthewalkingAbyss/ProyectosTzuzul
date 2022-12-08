@@ -1,0 +1,21 @@
+{
+  "name": "primerproyectojs",
+  "version": "1.0.0",
+  "description": "Juego de rol atravez de la terminal y navegador",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ArtoriasthewalkingAbyss"
+  },
+  "keywords": [
+    "javascript",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Agustín Castro",
+  "license": "MIT"
+}

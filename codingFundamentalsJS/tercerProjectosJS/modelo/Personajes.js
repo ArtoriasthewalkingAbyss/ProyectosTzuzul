@@ -9,8 +9,8 @@ class Personaje {
         console.log(this.nom);
     };
     cambiarNombre() {
-        //podria poner una promesa esta demas esta funcion tendria que ser una obcion el la cracion y seleccion del personaje
-    };
+        //podria poner una promesa
+    }
 };
 
 
@@ -33,4 +33,4 @@ const personaje_8 = new Personaje("","","",0,1)
 
 const personaje_9 = new Personaje("","","",0,1)
 
-export {Personaje_1,Personaje_2,Personaje_3,Personaje_4,Oponente1};
+export {Personaje_1,Personaje_2,Personaje_3,Personaje_4,Oponente1}
