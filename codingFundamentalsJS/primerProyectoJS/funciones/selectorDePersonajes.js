@@ -3,65 +3,46 @@ import { Personaje_1, Personaje_2, Personaje_3, Personaje_4} from "../modelo/Per
 
 function selectorDePersonaje() {
     let jugador;
-    let confir;
-    while (jugador === undefined) {
+    const personajes = [Personaje_1, Personaje_2, Personaje_3, Personaje_4];//nose como meter todo los personaje disponible de forma automatica
+    while (jugador === undefined) {//preguntar si puedo mejorar la condicion
 
-        console.log("Seleccione un Personaje escribiendo su nombre ")
-        Personaje_1.mostraPersonaje(),Personaje_2.mostraPersonaje(), Personaje_3.mostraPersonaje(),Personaje_4.mostraPersonaje();
+        console.log("Seleccione un Personaje escribiendo su nombre ");
+        personajes.forEach(element => {
+            element.mostraPersonaje();
+        });
 
-        let personajeSelecionado = prompt("")
+        let personajeSelecionado = prompt("");
 
-        switch (personajeSelecionado) {
-            case Personaje_1.nom://podria hacer de ver como puedo juntar todos los caso pero mostrando el repectivo objeto que coresponda capaz cuntando todos los objetos en un arrays pero para mi que daria un problema muy gordo
+        personajes.forEach((element, index) => {
+            if (element.nom == personajeSelecionado) {
                 console.log("Usted a seleccionado a");
-                console.table(Personaje_1)
-                validacionDePersonaje(confir);
-                jugador = Personaje_1;
-                break;
-            case Personaje_2.nom:
-                console.log("Usted a seleccionado a ",Personaje_2,"¿está seguro de su elección? [si/no]");
-                confir = prompt("");
-                validacionDePersonaje(confir);
-                jugador = Personaje_2;
-                break;
-            case Personaje_3.nom:
-                console.log("Usted a seleccionado a ",Personaje_3,"¿está seguro de su elección? [si/no]")
-                confir = prompt("")
-                validacionDePersonaje(confir)
-                jugador = Personaje_3;
-                break;
-            case Personaje_4:
-                console.log("Usted a seleccionado a ",Personaje_4,"¿está seguro de su elección? [si/no]")
-                confir = prompt("")
-                validacionDePersonaje(confir);
-                jugador = Personaje_4;
-                break;
-            default:
-                console.log("Su selección no es válida")
-                break;
-        };
+                console.table(element);
+                const confir = prompt("¿está seguro de su elección? [si/no]");
+                if (validacionDePersonaje(confir)) {
+                    jugador = element;
+                };
+                
+            } else if (index == personajes.length) {//no se comple la condicion por que length es el total de array osea index 0-4 length 1-5
+                console.log("Su selección no es válida");
+            };
+        });
     };
-}
-
-function validacionDePersonaje(respuesta) {
-    while (!respuesta == "si" || !respuesta == "no") {
-
-        respuesta = prompt("¿está seguro de su elección? [si/no]");
-        
-        if (respuesta == "si") {
-            return console.log("Personaje seleccionado");
-        }
-        else if (respuesta == "no") {     
-            console.log("Personaje no seleccionado");
-    
-        } else {
-            console.log("No a papretado la tecla corecta") //no se como hacer para que se repetir que se vuelva a hce la pregunta de si y no con una promesa termine poniendole un while
-        }
-    }
+    return jugador;
 };
 
-function funcionDeSeleccion(selecion) {
-    console.log("Usted a seleccionado a");
-}
+function validacionDePersonaje(respuesta) {
+    
+    if (respuesta == "si") {
+        console.log("Personaje seleccionado");
+        return true;
+    }
+    else if (respuesta == "no") {     
+        console.log("Personaje no seleccionado");
+        return false;
+    } else {
+        console.log("Respuesta incorrecta, respondio " + respuesta); //no se como hacer para que se repetir que se vuelva a hce la pregunta de si y no con una promesa termine poniendole un while
+        return validacionDePersonaje(prompt("¿está seguro de su elección? [si/no]"));
+    };
+};
 
-export {selectorDePersonaje}
+export {selectorDePersonaje};

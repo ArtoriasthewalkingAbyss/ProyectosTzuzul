@@ -1,7 +1,6 @@
 //import { Personaje_1, Personaje_2, Personaje_3, Personaje_4, Oponente1 } from "./modelo/Personajes.js";
 import {iniciarJuego} from "./funciones/iniciarJuego.js";
 
-let bucleDelMenu = true;
 let jugador;
 
 // print("hola")
@@ -10,7 +9,7 @@ prompt("Presione Enter");
 iniciarJuego();
 
 
-for (let i = 1; i < 2; i++) {
+/*for (let i = 1; i < 2; i++) {
     
     console.log("Desea ir al Norte, Oeste, Sur, Este");
     let direccion = prompt("");
@@ -39,14 +38,14 @@ for (let i = 1; i < 2; i++) {
             } */
             
             
-            break;
+            /*break;
     
         default:
             console.log("Opcion no valida");
             i--
             break;
     };
-};
+};*/
 
 console.log("Hasta aqui la demo, Que tengan un lindo día");    
 /* if(firstAtaque == 1) {
