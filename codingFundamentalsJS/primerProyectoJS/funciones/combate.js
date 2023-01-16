@@ -8,7 +8,7 @@ function combate(estadisticasSujeto1, estadisticasSujeto2) {
         
         switch (prioridad) {
             case 1:
-                console.log("");
+                console.log("Elije la accion que  quieras realizar");
                 console.log("Atacaste a tu Oponente");
                 console.log("Le sacaste",ataqueJug);
                 vidaDelOponente= vidaDelOponente - ataqueJug; 
